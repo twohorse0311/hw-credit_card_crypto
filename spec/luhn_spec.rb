@@ -9,6 +9,7 @@ cards.each do |name, numbers|
     numbers['valid'].each do |number|
       it "works on card #: #{number}" do
         card = CreditCard.new(number, nil, nil, nil)
+        p card.validate_checksum
         _(card.validate_checksum).must_equal true
       end
     end
